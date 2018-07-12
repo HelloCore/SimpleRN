@@ -7,6 +7,8 @@
     "test": "jest"
   },
   "dependencies": {
+    "@babel/core": "^7.0.0-beta.47",
+    "babel-core": "^7.0.0-beta.47",
     "react": "16.4.1",
     "react-native": "0.56.0"
   },
@@ -33,8 +35,10 @@
       "js"
     ],
     "transform": {
+      "^.+\\.js$": "<rootDir>/node_modules/react-native/jest/preprocessor.js",
       "^.+\\.(js)$": "<rootDir>/node_modules/babel-jest",
-      "\\.(ts|tsx)$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+      "\\.(ts|tsx)$": "<rootDir>/node_modules/ts-jest/preprocessor.js",
+      "^.+\\.tsx?$": "ts-jest"
     },
     "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$",
     "testPathIgnorePatterns": [
